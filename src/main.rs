@@ -48,7 +48,7 @@ fn handle_client(stream: TcpStream) {
 
 fn get_operation(file_name: &str, stream: &mut TcpStream) {
     // パスの構築を少しだけスマートにした
-    let path = PathBuf::from(format!("./www{}", file_name));
+    let path = PathBuf::from(format!("./public{}", file_name));
     let mut file = match File::open(&path) {
         Err(why) => {
             panic!(
